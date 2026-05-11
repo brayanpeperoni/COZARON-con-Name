@@ -1,25 +1,45 @@
 function crearCorazon() {
-  const nombre = document.getElementById("nombre").value.trim();
 
-  if (nombre === "") {
-    alert("Escribe un nombre primero");
-    return;
-  }
+    const nombreInput =
+    document.getElementById("nombre").value.trim();
 
-  let resultado = "";
+    const nombre =
+    nombreInput || "AMOR";
 
-  for (let y = 1.5; y > -1.5; y -= 0.12) {
-    for (let x = -1.5; x < 1.5; x += 0.06) {
-      let formula = Math.pow(x * x + y * y - 1, 3) - x * x * y * y * y;
+    const heart =
+    document.getElementById("heart");
 
-      if (formula <= 0) {
-        resultado += nombre;
-      } else {
-        resultado += " ";
-      }
+    let texto = "";
+
+    let index = 0;
+
+    for(let y = 1.5; y > -1.5; y -= 0.12){
+
+        let linea = "";
+
+        for(let x = -1.5; x < 1.5; x += 0.06){
+
+            let formula =
+            Math.pow(x * x + y * y - 1, 3)
+            - x * x * y * y * y;
+
+            if(formula <= 0){
+
+                linea +=
+                nombre[index % nombre.length];
+
+                index++;
+
+            }else{
+
+                linea += " ";
+            }
+        }
+
+        texto += linea + "\n";
     }
-    resultado += "\n";
-  }
 
-  document.getElementById("corazon").textContent = resultado;
+    heart.textContent = texto;
 }
+
+crearCorazon();
