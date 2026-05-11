@@ -3,20 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Corazón con Nombre</title>
+  <title>Corazón Neon</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="contenedor">
-    <h1>Corazón con Nombre</h1>
+  <div class="container">
 
-    <input type="text" id="nombre" placeholder="Escribe un nombre">
-    <button onclick="crearCorazon()">Crear corazón</button>
+    <h1>💚 CORAZÓN NEON 💚</h1>
 
-    <div id="corazon"></div>
+    <div class="input-box">
+
+      <input
+        type="text"
+        id="nombre"
+        placeholder="Escribe un nombre">
+
+      <button onclick="crearCorazon()">
+        Crear
+      </button>
+
+    </div>
+
+    <div class="heart-area">
+      <pre id="heart"></pre>
+    </div>
+
+    <p class="firma">
+      Verde Limón & Negro
+    </p>
+
   </div>
 
   <script src="script.js"></script>
+
 </body>
 </html>
